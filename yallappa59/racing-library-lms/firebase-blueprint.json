@@ -1,0 +1,28 @@
+{
+  "entities": {
+    "Book": {
+      "title": "Book",
+      "description": "Represents a book in the library inventory.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Title of the book" },
+        "author": { "type": "string", "description": "Author of the book" },
+        "category": { "type": "string", "description": "Genre or category" },
+        "stock": { "type": "number", "description": "Number of copies available" },
+        "image": { "type": "string", "description": "URL for the book cover image" },
+        "rating": { "type": "number", "description": "Average user rating" },
+        "year": { "type": "string", "description": "Publication year" },
+        "status": { "type": "string", "enum": ["Active", "Maintenance", "Archived"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "author", "category", "stock", "status"]
+    }
+  },
+  "firestore": {
+    "books": {
+      "schema": "Book",
+      "description": "Collection of all books in the library."
+    }
+  }
+}
